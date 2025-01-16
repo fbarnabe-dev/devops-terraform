@@ -13,15 +13,9 @@ terraform {
       version = "2.17.0"
     }
   }
-  backend "s3" {
-    bucket = "devopsdemo-bc"
-    key    = "dev/terraform.tfstate"
-    region = "us-east-1"
-  }
 }
-
 provider "aws" {
-  region = "us-east-1"
+  region = var.region
 }
 
 provider "kubernetes" {
